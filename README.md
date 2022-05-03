@@ -4,7 +4,7 @@
 
 - [ ] Conversion et adaptation de la BDD pour postegreSQL + mise en ligne
 - [ ] Gestion des rôles
-- [ ] Gestion de l'authentification
+- [x] Gestion de l'authentification
 - [ ] Pouvoir prendre un rendez-vous
 - [ ] Pouvoir ajouter / éditer un 
 - [ ] Lister les animaux de la personne conectée
