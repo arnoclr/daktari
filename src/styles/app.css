@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --bleu: #1294DE;
+    --circle-top: #12C5EC;
+    --circle-bottom: #1294DE;
+    --gris: #f9f9f9;
+
+    --padding-left: 30px;
+}
