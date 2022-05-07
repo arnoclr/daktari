@@ -9,7 +9,7 @@
             <img src="../src/img/user1.png" alt="user1" height="75px" width="auto">
         </div>
         <div class="dropdown">
-            <a href="../src/pages/profile.php" class="username"><?= $name ?></a>
+            <a href="../src/pages/profile.php" class="username"><?= $name ?? '?' ?></a>
             <div class="bar"></div>
             <ul>
                 <li><a href="../src/pages/user_animals.php">Mes animaux</a></li>

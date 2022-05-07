@@ -7,5 +7,6 @@
     <title>Daktari</title>
     <link rel="stylesheet" href="../src/styles/pages/index.css">
     <link rel="stylesheet" href="../src/styles/app.css">
+    <link rel="stylesheet" href="../src/styles/navbar.css">
 </head>
 <body>
