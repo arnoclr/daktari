@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="../src/pages/user_animals.php">Mes animaux</a></li>
                 <li><a href="../src/pages/user_appointment.php">Prendre rendez-vous</a></li>
-                <li class="logout"><a href="../src/pages/logout.php">Se déconnecter</a></li>
+                <li class="logout"><a href="?action=logout">Se déconnecter</a></li>
             </ul>
         </div>
     </div>
