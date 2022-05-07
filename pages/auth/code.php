@@ -1,6 +1,7 @@
 <form method="post" action="?action=verifyCode" class="form-email form-code" id="form">
 
     <div class="code-wrap">
+        <?= Token::set() ?>
         <input type="number" name="code[]" maxlength="1" min="0" max="9" class="code-input" placeholder=" " autocomplete="off" oninput="this.nextElementSibling.focus()" id="n1">
         <input type="number" name="code[]" maxlength="1" min="0" max="9" class="code-input" placeholder=" " autocomplete="off" oninput="this.nextElementSibling.focus()" id="n2">
         <input type="number" name="code[]" maxlength="1" min="0" max="9" class="code-input" placeholder=" " autocomplete="off" oninput="this.nextElementSibling.focus()" id="n3">

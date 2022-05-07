@@ -7,6 +7,10 @@
         <p><?= isset($bienvenue) ? "Entrez le code à 6 chiffres reçu par mail. <br>  Vous n’avez pas reçu de mail ? Pensez à <br>  vérifier dans vos spams."
         : "C’est votre première visite ? Entrez <br> simplement votre adresse email et nous <br> vous enverrons un code de confirmation." ?></p>
 
+        <?php if (isset($error)) : ?>
+            <p class="error"><?= $error ?></p>
+        <?php endif; ?>
+
         <?php if(isset($bienvenue)) {
             include "./pages/auth/code.php";
         } else {

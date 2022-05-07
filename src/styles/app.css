@@ -8,3 +8,7 @@
 
     --padding-left: 30px;
 }
+
+.error {
+    color: rgb(180, 18, 18);
+}

@@ -2,6 +2,10 @@
 
 session_start();
 
+// classes
+require_once 'includes/classes/csrf.php';
+Token::init();
+
 $action = isset($_GET['action']) ? $_GET['action'] : 'viewCalendar';
 
 function loggedEmail()
