@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="src/styles/pages/home.css">
 
 <header>
-    <p>Bonjour <?= $name ?>, voici vos prochains traitements.</p>
+    <p>Bonjour <?= $user->nom ?>, voici vos prochains traitements.</p>
 </header>
 
 <section>

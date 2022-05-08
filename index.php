@@ -14,6 +14,7 @@ try {
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec('SET search_path TO daktari');
 }
 catch (PDOException $e) {
     echo "ERREUR : La connexion a échouée";
@@ -25,7 +26,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'viewCalendar';
 $user = null;
 if (isset($_SESSION['email'])) {
     $user = $pdo->query("SELECT * FROM proprietaires WHERE email = '" . $_SESSION['email'] . "'")->fetch();
-    if (!$user) {
+    if (!$user && $action != 'completeProfile') {
         header('Location: ?action=completeProfile');
         exit;
     }
