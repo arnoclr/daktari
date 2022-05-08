@@ -11,8 +11,8 @@ if (isset($_GET['edit'])) {
     if (isset($_POST['raison']) && isset($_POST['timestamp']) && Token::verify()) {
         $raison = htmlspecialchars($_POST['raison']);
         $timestamp = htmlspecialchars($_POST['timestamp']);
-        $duree = htmlspecialchars($_POST['duree']);
-        $tarif = htmlspecialchars($_POST['tarif']);
+        $duree = intval($_POST['duree']);
+        $tarif = intval($_POST['tarif']);
         $resume = htmlspecialchars($_POST['resume']);
 
         $up = $pdo->prepare("UPDATE consultations SET raison = ?, date = ?, duree_minutes = ?, tarif_centimes = ?, resume_manipulations = ? WHERE id = ?");
@@ -22,8 +22,10 @@ if (isset($_GET['edit'])) {
         $get->execute([$_GET['edit']]);
         $clientEmail = $get->fetch()->email;
 
-        $formattedDate = str_replace("T", " à ", $timestamp);
-        mail($clientEmail, 'Rendez-vous confirmé', "Votre rendez-vous pour \"$raison\" a été confirmé pour le $formattedDate.\n");
+        if ($tarif == 0 && $duree == 0) {
+            $formattedDate = str_replace("T", " à ", $timestamp);
+            mail($clientEmail, 'Rendez-vous confirmé', "Votre rendez-vous pour \"$raison\" a été confirmé pour le $formattedDate.\n");
+        }
 
         echo '<p>Rendez-vous mis à jour !</p>';
     }

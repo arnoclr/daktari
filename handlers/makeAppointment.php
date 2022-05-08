@@ -12,7 +12,7 @@ if (isset($_POST['raison']) && isset($_POST['animal']) && isset($_POST['timestam
     $ins->execute([$animal, $raison, $timestamp]);
 
     if ($ins->rowCount() > 0) {
-        mail($user->email, "Votre demande de rendez-vous a bien été prise en compte", "Votre demande sera analysée et cous recevrez un email contenant la date définitive du rendez-vous.");
+        mail($user->email, "Votre demande de rendez-vous a bien été prise en compte", "Votre demande sera analysée et vous recevrez un email contenant la date définitive du rendez-vous.");
         echo 'Votre rendez-vous a été pris en compte.';
     } else {
         echo 'Une erreur est survenue.';
