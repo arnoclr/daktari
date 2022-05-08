@@ -8,7 +8,7 @@ $appointments = $pdo->query("SELECT * FROM consultations LIMIT 25")->fetchAll();
 
 if (isset($_GET['edit'])) {
 
-    if (isset($_POST['raison']) && isset($_POST['timestamp'])) {
+    if (isset($_POST['raison']) && isset($_POST['timestamp']) && Token::verify()) {
         $raison = htmlspecialchars($_POST['raison']);
         $timestamp = htmlspecialchars($_POST['timestamp']);
         $duree = htmlspecialchars($_POST['duree']);
