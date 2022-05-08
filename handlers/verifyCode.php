@@ -9,7 +9,7 @@ if (isset($_POST['code']) && Token::verify()) {
         if ($_SESSION['login_code'] == $POST_Code) {
             $_SESSION['email'] = $_SESSION['login_email'];
             $message = "code vérifié";
-            header('Location: index.php?success=true');
+            header('Location: ?success=true');
             exit;
         } else {
             $message = "code incorrect, veuillez recommencer";
@@ -22,4 +22,4 @@ if (isset($_POST['code']) && Token::verify()) {
     $message = "données manquantes";
 }
 
-header("Location: index.php?action=login&error=$message");
+header("Location: ?action=login&error=$message");
