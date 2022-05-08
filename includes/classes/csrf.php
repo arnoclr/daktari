@@ -47,6 +47,9 @@ class Token
     public static function verify()
     {
         if(isset($_POST[self::$string]) && !empty($_POST[self::$string])) {
+            if (!isset($_SESSION[self::$string])) {
+                return false;
+            }
             $session = $_SESSION[self::$string];
             unset($_SESSION[self::$string]);
             return $_POST[self::$string] == $session;
