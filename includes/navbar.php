@@ -12,8 +12,8 @@
             <a href="../src/pages/profile.php" class="username"><?= $name ?? '?' ?></a>
             <div class="bar"></div>
             <ul>
-                <li><a href="../src/pages/user_animals.php">Mes animaux</a></li>
-                <li><a href="../src/pages/user_appointment.php">Prendre rendez-vous</a></li>
+                <li><a href="?action=myAnimals">Mes animaux</a></li>
+                <li><a href="?action=makeAppointment">Prendre rendez-vous</a></li>
                 <li class="logout"><a href="?action=logout">Se déconnecter</a></li>
             </ul>
         </div>
