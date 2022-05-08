@@ -1,6 +1,11 @@
 <?php
 
 if (isset($_POST['nom']) && isset($_POST['adresse']) && isset($_POST['tel']) && isset($_SESSION['email'])) {
+
+    if (!Token::verify()) {
+        die('la page a expirée');
+    }
+
     $nom = htmlspecialchars($_POST['nom']);
     $adresse = htmlspecialchars($_POST['adresse']);
     $tel = htmlspecialchars($_POST['tel']);
