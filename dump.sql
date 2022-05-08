@@ -42,7 +42,8 @@ CREATE TABLE daktari.animaux (
     genre character(1),
     castre boolean,
     poids smallint,
-    id_proprietaire integer NOT NULL
+    id_proprietaire integer NOT NULL,
+    image character varying(75)
 );
 
 
@@ -362,99 +363,6 @@ ALTER TABLE ONLY daktari.traitements ALTER COLUMN id_consultation SET DEFAULT ne
 --
 
 ALTER TABLE ONLY daktari.traitements ALTER COLUMN id_produit SET DEFAULT nextval('daktari.traitements_id_produit_seq'::regclass);
-
-
---
--- Data for Name: animaux; Type: TABLE DATA; Schema: daktari; Owner: arno.cellarier
---
-
-
-
---
--- Name: animaux_id_proprietaire_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.animaux_id_proprietaire_seq', 1, false);
-
-
---
--- Name: animaux_id_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.animaux_id_seq', 1, false);
-
-
---
--- Data for Name: consultations; Type: TABLE DATA; Schema: daktari; Owner: arno.cellarier
---
-
-
-
---
--- Name: consultations_id_animal_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.consultations_id_animal_seq', 1, false);
-
-
---
--- Name: consultations_id_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.consultations_id_seq', 1, false);
-
-
---
--- Data for Name: produits; Type: TABLE DATA; Schema: daktari; Owner: arno.cellarier
---
-
-
-
---
--- Name: produits_id_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.produits_id_seq', 1, false);
-
-
---
--- Data for Name: proprietaires; Type: TABLE DATA; Schema: daktari; Owner: arno.cellarier
---
-
-
-
---
--- Name: proprietaires_id_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.proprietaires_id_seq', 1, false);
-
-
---
--- Data for Name: traitements; Type: TABLE DATA; Schema: daktari; Owner: arno.cellarier
---
-
-
-
---
--- Name: traitements_id_consultation_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.traitements_id_consultation_seq', 1, false);
-
-
---
--- Name: traitements_id_produit_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.traitements_id_produit_seq', 1, false);
-
-
---
--- Name: traitements_id_seq; Type: SEQUENCE SET; Schema: daktari; Owner: arno.cellarier
---
-
-SELECT pg_catalog.setval('daktari.traitements_id_seq', 1, false);
 
 
 --
