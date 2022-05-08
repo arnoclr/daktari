@@ -10,9 +10,14 @@ if (isset($_POST['email'])) {
     $_SESSION['login_code'] = $code;
     $_SESSION['login_timestamp'] = time();
     $_SESSION['login_email'] = $_POST['email'];
-    mail($_POST['email'], "Votre code de vérification", "Votre code de vérification est : $code");
-    $message = "code de vérification envoyé";
-    $bienvenue = true;
+    $mailSent = mail($_POST['email'], "Votre code de vérification", "Votre code de vérification est : $code");
+
+    if ($mailSent) {
+        $message = "code de vérification envoyé";
+        $bienvenue = true;
+    } else {
+        $message = "erreur lors de l'envoi du code de vérification. Essayez avec l'adresse mail de l'université.";
+    }
 }
 
 if (isset($_GET['error'])) {
