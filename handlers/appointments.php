@@ -18,6 +18,13 @@ if (isset($_GET['edit'])) {
         $up = $pdo->prepare("UPDATE consultations SET raison = ?, date = ?, duree_minutes = ?, tarif_centimes = ?, resume_manipulations = ? WHERE id = ?");
         $up->execute([$raison, $timestamp, $duree, $tarif, $resume, $_GET['edit']]);
 
+        $get = $pdo->prepare("SELECT email FROM proprietaires WHERE id = (SELECT id_proprietaire FROM animaux WHERE id = (SELECT id_animal FROM consultations WHERE id = ?))");
+        $get->execute([$_GET['edit']]);
+        $clientEmail = $get->fetch()->email;
+
+        $formattedDate = str_replace("T", " à ", $timestamp);
+        mail($clientEmail, 'Rendez-vous confirmé', "Votre rendez-vous pour \"$raison\" a été confirmé pour le $formattedDate.\n");
+
         echo '<p>Rendez-vous mis à jour !</p>';
     }
 
