@@ -6,10 +6,10 @@
 
     <div class="user-action" onclick="dropdownToggle()">
         <div class="profile">
-            <img src="../src/img/user1.png" alt="user1" height="75px" width="auto">
+            <img src="https://www.gravatar.com/avatar/<?= md5(strtolower(trim($user->email))) ?>?d=retro&s=75" alt="photo de profil gravatar" height="75px" width="75px">
         </div>
         <div class="dropdown">
-            <a href="../src/pages/profile.php" class="username"><?= $name ?? '?' ?></a>
+            <a href="?action=viewProfile" class="username"><?= $user->nom ?></a>
             <div class="bar"></div>
             <ul>
                 <li><a href="?action=myAnimals">Mes animaux</a></li>
