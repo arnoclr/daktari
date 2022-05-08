@@ -2,9 +2,11 @@
 
 session_start();
 
-// classes
+// utils
 require_once 'includes/classes/csrf.php';
 Token::init();
+
+require_once 'includes/functions/images.php';
 
 $dbname = "arno.cellarier_db";
 $user = "arno.cellarier";

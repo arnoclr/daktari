@@ -1,57 +1,20 @@
 <?php
 
-// function i($filename, $size = "default", $format = "webp") {
+function uploadImageAndRetrieveUrl($file) {
+    $client_id = "ee3ef9cca1d6857";
+    
+    $image = file_get_contents($file['tmp_name']); 
 
-//     $sizes = [
-//         "small" => 340,
-//         "medium" => 640,
-//         "large" => 1024,
-//         "xlarge" => 1600,
-//         "default" => 0
-//     ];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://api.imgur.com/3/image.json');
+    curl_setopt($ch, CURLOPT_POST, TRUE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Client-ID ' . $client_id));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, array('image' => base64_encode($image)));
 
-//     $input = "./src/img/$filename";
-//     $hashfile = hash_file('sha256', $input);
-//     $outputname = "./static/img/@{$sizes[$size]}__{$hashfile}.$format";
+    $reply = curl_exec($ch);
+    curl_close($ch);
 
-//     if (!file_exists('./static/img/')) {
-//         mkdir('./static/img/', 0777, true);
-//     }
-
-//     if (!file_exists($outputname)) {   
-//         $info = getimagesize($input);
-
-//         if ($info['mime'] == 'image/jpeg') 
-//             $image = imagecreatefromjpeg($input);
-
-//         elseif ($info['mime'] == 'image/gif') 
-//             $image = imagecreatefromgif($input);
-
-//         elseif ($info['mime'] == 'image/png') 
-//             $image = imagecreatefrompng($input);
-
-//         // resize image with given width size
-//         $width = imagesx($image);
-//         $height = imagesy($image);
-        
-//         if ($size == "default") {
-//             $new_width = imagesx($image);
-//             $new_height = imagesy($image);
-//         } else {
-//             $new_width = $sizes[$size];
-//             $new_height = ($new_width / $width) * $height;
-//         }
-
-//         $new_image = imagecreatetruecolor($new_width, $new_height);
-//         imagecopyresampled($new_image, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
-
-//         // save image with given quality
-//         if ($format == "webp") {
-//             imagewebp($new_image, $outputname, 80);
-//         } else if ($format == "png") {
-//             copy($input, $outputname);
-//         }
-//     }
-
-//     return $outputname;
-// }
+    $reply = json_decode($reply);
+    return $reply->data->link;
+}
