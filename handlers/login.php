@@ -1,6 +1,6 @@
 <?php
 
-if (loggedEmail() != null) {
+if ($user != null) {
     header('Location: ?action=viewCalendar');
     exit;
 }

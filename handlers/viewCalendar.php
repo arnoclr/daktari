@@ -4,7 +4,6 @@
 
 include 'includes/components/Card.php';
 
-$name = strtok($_SESSION['email'], '@');
 $days = array('Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim');
 $months = array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
 

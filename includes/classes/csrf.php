@@ -82,7 +82,7 @@ class Token
             session_start();
         }
         if(isset($_SESSION[$key])) {
-            throw new \Exception('Session key is already used');
+            unset($_SESSION[$key]);
         }
         $_SESSION[$key] = $value;
     }
