@@ -12,3 +12,18 @@
 
     <button>Mettre à jour</button>
 </form>
+
+<h2>Traitements associés</h2>
+<ul>
+    <?php foreach ($traitements as $traitement): ?>
+        <?php $product = $pdo->query("SELECT * FROM produits WHERE id = $traitement->id_produit")->fetch(); ?>
+        <li>
+            <?= $product->nom ?> (<?= $traitement->frequence_journaliere ?> fois par jour pendant <?= $traitement->duree_jours ?> jours)
+            <form action="?action=removeTraitement&id=<?= $traitement->id ?>&redirectTo=<?= $appointment->id ?>" method="post">
+                <?= Token::set() ?>
+                <button>Supprimer le traitement</button>
+            </form>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<a href="?action=addTraitement">Ajouter un traitement</a>

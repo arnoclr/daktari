@@ -4,7 +4,7 @@ if ($user->role < 2) {
     die('Vous n\'avez pas les droits pour accéder à cette page !');
 }
 
-$appointments = $pdo->query("SELECT * FROM consultations LIMIT 25")->fetchAll();
+$appointments = $pdo->query("SELECT * FROM consultations ORDER BY id DESC LIMIT 25")->fetchAll();
 
 if (isset($_GET['edit'])) {
 
@@ -24,6 +24,8 @@ if (isset($_GET['edit'])) {
     $get = $pdo->prepare("SELECT * FROM consultations WHERE id = ?");
     $get->execute([$_GET['edit']]);
     $appointment = $get->fetch();
+
+    $traitements = $pdo->query("SELECT * FROM traitements WHERE id_consultation = $appointment->id")->fetchAll();
 
     if (!$appointment) {
         die('Ce rendez-vous n\'existe pas !');
