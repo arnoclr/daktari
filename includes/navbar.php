@@ -1,7 +1,9 @@
 <nav>
     <div class="head">
-        <h1>Daktari</h1>
-        <p>Nos amis les animaux et leur santé</p>
+        <a href="../daktari/">
+            <h1>Daktari </h1>
+            <p>Nos amis les animaux et leur santé</p>
+        </a>
     </div>
 
     <div class="user-action" onclick="dropdownToggle()">

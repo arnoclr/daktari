@@ -6,11 +6,30 @@
 
 <section>
     <div class="date">
-        <p><?= $days[date('w') - 1] . '. ' . date('d') . ' ' . $months[date('n') - 1] ?></p>
+        <p><?= $days[date('N')] ?>. <?= date('d') ?> <?= $months[date('n') - 1] ?> <?= date('Y') ?></p>
+
     </div>
     <div class="calendar-wrap">
-        <div class="day1">
+        <div id="myBar-wrap">
+            <p> 0 </p>
+            <div id="arrow-right"></div>
+            <div id="myBar"></div>
+        </div>
+        
+        
+        <div class="time">
+            <div class="time-hours">
+                <?php for ($i = 8; $i <= 20; $i++) : ?>
+                    <div class="time-item">
+                        <p class="time"><?= $i ?>h</p>
 
+                    </div>
+                <?php endfor; ?>
+            </div>
+            <div class="time-bar"></div>
+
+        </div>
+        <div class="day1">
 
             <?php include 'includes/components/cardItem.php'; ?>
             <!-- <div class="card-wrap">
@@ -42,3 +61,5 @@
         <div class="day3"></div>
     </div>
 </section>
+
+<script src="src/scripts/pages/home.js"></script>

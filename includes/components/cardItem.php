@@ -8,11 +8,11 @@
 
         <div class="dose-animal-wrap">
             <div class="dose-info">
-                <img src="../src/img/icons/pill.png" alt="pill" height="24px" width="24px">
+                <img src="src/img/icons/pill.png" alt="pill" height="24px" width="24px">
                 <p class="mini-info"><?= $card->getDose() ?> pillules</p>
             </div>
             <div class="animal-info">
-                <img src="../src/img/icons/footprint.png" alt="footprint" height="24px" width="24px">
+                <img src="src/img/icons/footprint.png" alt="footprint" height="24px" width="24px">
                 <p class="mini-info"><?= $card->getAnimal() ?></p>
             </div>
         </div>

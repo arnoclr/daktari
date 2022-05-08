@@ -12,6 +12,7 @@ $dbname = "arno.cellarier_db";
 $user = "arno.cellarier";
 $pass = "789789";
 $host = "sqletud.u-pem.fr";
+
 try {
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
