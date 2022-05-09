@@ -9,7 +9,7 @@ endforeach;
 <div class="wrap">
     <section class="animal-img-section">
         <div class="animal-img">
-            <img src="<?= preg_replace("/.png|.jpg/", 's.jpg', $animal->image) ?>" alt="<?= $animal->nom ?>">
+            <img src="<?= preg_replace("/.png|.jpg/", '.jpg', $animal->image) ?>" alt="<?= $animal->nom ?>">
         </div>
 
 
