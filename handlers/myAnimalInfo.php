@@ -1,5 +1,5 @@
 <?php
-$GET_id = $_GET['id'];
+$GET_id = intval($_GET['id']);
 $req = $pdo->query("SELECT * FROM animaux WHERE id = $GET_id");
 $animals = $req->fetchAll();
 
