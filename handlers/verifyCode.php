@@ -9,7 +9,7 @@ if (isset($_POST['code']) && Token::verify()) {
         if ($_SESSION['login_code'] == $POST_Code) {
             $_SESSION['email'] = $_SESSION['login_email'];
             $message = "code vérifié";
-            header('Location: ?success=true');
+            header('Location: ' . base64_decode($_GET['redirectTo']));
             exit;
         } else {
             $message = "code incorrect, veuillez recommencer";

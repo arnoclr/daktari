@@ -34,7 +34,8 @@ if (isset($_SESSION['email'])) {
         exit;
     }
 } else if (!in_array($action, ['login', 'completeProfile', 'verifyCode'])) {
-    header('Location: ?action=login');
+    $currentUrl = base64_encode($_SERVER['REQUEST_URI']);
+    header("Location: ?action=login&redirectTo=$currentUrl");
     exit;
 }
 

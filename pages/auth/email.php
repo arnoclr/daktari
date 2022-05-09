@@ -1,4 +1,4 @@
-<form method="post" action="?action=login" class="form-email">
+<form method="post" class="form-email">
     <input type="email" name="email" id="email" class="email-input" placeholder="Adresse email" autocomplete="off" required>
     <div class="button-email__wrap">
         <a href="#">Besoin d'aide ?</a>
