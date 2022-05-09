@@ -1,9 +1,3 @@
-<?php
-// print_r($animals);
-foreach ($animals as $animal) :
-endforeach;
-?>
-
 <link rel="stylesheet" href="src/styles/pages/list.css">
 
 <div class="wrap">
