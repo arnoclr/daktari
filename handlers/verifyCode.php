@@ -22,4 +22,4 @@ if (isset($_POST['code']) && Token::verify()) {
     $message = "données manquantes";
 }
 
-header("Location: ?action=login&error=$message");
+header("Location: ?action=login&error=$message&redirectTo=" . $_GET['redirectTo']);
