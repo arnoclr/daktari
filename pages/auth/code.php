@@ -1,4 +1,4 @@
-<form method="post" action="?action=verifyCode&redirectTo=<?= htmlspecialchars($_GET['redirectTo']) ?>" class="form-email form-code" id="form">
+<form method="post" action="?action=verifyCode&redirectTo=<?= htmlspecialchars($_GET['redirectTo'] ?? base64_encode("?noRedirect")) ?>" class="form-email form-code" id="form">
 
     <div class="code-wrap">
         <?= Token::set() ?>

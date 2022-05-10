@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="src/styles/forms.css?a=<?= md5_file("src/styles/forms.css") ?>">
+
 <nav>
     <div class="head">
         <a href="../daktari/">
