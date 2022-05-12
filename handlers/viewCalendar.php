@@ -12,16 +12,16 @@ foreach ($traitements as $traitement) {
     $daysAgo = floor($ago / (60 * 60 * 24));
     $remaining = $traitement->duree_jours + $daysAgo;
     $product = $pdo->query("SELECT * FROM produits WHERE id = $traitement->id_produit")->fetch();
+    $animal = $pdo->query("SELECT * FROM animaux WHERE id = (SELECT id_animal FROM consultations WHERE id = $traitement->id_consultation)")->fetch();
     
     for ($i = 0; $i < min(3, $remaining); $i++) {
         $traitementsPerDays[$i][] = (object) [
             "traitement" => $traitement,
             "product" => $product,
+            "animal" => $animal
         ];
     }
 }
-
-include 'includes/components/Card.php';
 
 $days = array('', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim');
 $months = array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
