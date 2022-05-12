@@ -18,6 +18,15 @@
             <ul>
                 <li><a href="?action=myAnimals">Mes animaux</a></li>
                 <li><a href="?action=makeAppointment">Prendre rendez-vous</a></li>
+
+                <?php if ($user->role > 0): ?>
+                    <li><a href="?action=listProducts">Liste des produits</a></li>
+                <?php endif; ?>
+
+                <?php if ($user->role > 1): ?>
+                    <li><a href="?action=appointments">Liste des rendez-vous</a></li>
+                <?php endif; ?>
+
                 <li class="logout"><a href="?action=logout">Se déconnecter</a></li>
             </ul>
         </div>
