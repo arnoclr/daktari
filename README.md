@@ -8,6 +8,8 @@
 - [X] Pouvoir prendre un rendez-vous
 - [X] Lister les animaux de la personne connectée
 - [ ] Détails sur un animal (infos, traitements et rendez-vous passés / futurs)
-- [ ] Consulter le calendrier avec les traitements à prendre
-- [ ] Gestion des produits pour le personnel (~~ajout~~, suppression)
+- [X] Consulter le calendrier avec les traitements à prendre
+- [X] Gestion des produits pour le personnel (ajout)
 - [X] Gestion des traitements pour le personnel (ajout, suppression)
+- [ ] Gestion des animaux (décès, modification)
+- [ ] Fixer les bugs
