@@ -29,36 +29,21 @@
             <div class="time-bar"></div>
 
         </div>
-        <div class="day1">
 
-            <?php include 'includes/components/cardItem.php'; ?>
-            <!-- <div class="card-wrap">
-                <div class="card-info">
-                    <div class="product-info">
-                        <p class="product">< ?= $card->getProduct() ?></p>
-                        <p class="mini-info">< ?= $card->getBrand() ?></p>
-                    </div>
+        <?php $day = 0; foreach($traitementsPerDays as $data): $day++ ?>
+            <div class="day<?= $day ?>">
 
-                    <div class="dose-animal-wrap">
-                        <div class="dose-info">
-                            <img src="../src/img/icons/pill.png" alt="pill" height="24px" width="24px">
-                            <p class="mini-info">< ?= $card->getDose() ?> pillules</p>
-                        </div>
-                        <div class="animal-info">
-                            <img src="../src/img/icons/footprint.png" alt="footprint" height="24px" width="24px">
-                            <p class="mini-info">< ?= $card->getAnimal() ?></p>
-                        </div>
-                    </div>
+                <?php 
+                foreach($data as $item) {
+                    for ($i = 0; $i < $item->traitement->frequence_journaliere; $i++) {
+                        $card = new Card($item->product->nom, $item->product->marque, 2, 'Médor', $item->product->image);
+                        include 'includes/components/cardItem.php'; 
+                    }
+                }
+                ?>
 
-                </div>
-                <div class="product-img">
-                    <img src="< ?= $card->getImage() ?>" alt="< ?= $card->getProduct() ?>" height="100%">
-                </div>
-            </div> -->
-
-        </div>
-        <div class="day2"></div>
-        <div class="day3"></div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
 
