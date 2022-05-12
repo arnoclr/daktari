@@ -7,3 +7,7 @@
         </li>
     <?php endforeach; ?>
 </ul>
+
+<br>
+
+<a href="?action=addProduct" class="button">Ajouter un produit</a>

@@ -1,4 +1,4 @@
-button {
+button, .button {
     background-color: var(--bleu);
     color: white;
     border: none;
@@ -7,6 +7,7 @@ button {
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* forms */

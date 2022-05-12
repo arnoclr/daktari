@@ -13,7 +13,7 @@ if (isset($_FILES["image"]) && isset($_POST['nom']) && isset($_POST['marque']) &
     $query->bindParam(':image', $image);
     $query->execute();
 
-    echo 'Produit ajouté !';
+    header('Location: ?action=listProducts');
 }
 
 include 'pages/products/form.php';
