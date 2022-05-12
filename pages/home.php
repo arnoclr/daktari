@@ -34,7 +34,7 @@
                 <?php 
                 foreach($data as $item) {
                     for ($i = 0; $i < $item->traitement->frequence_journaliere; $i++) {
-                        $card = new Card($item->product->nom, $item->product->marque, 2, 'Médor', $item->product->image);
+                        $card = $item;
                         include 'includes/components/cardItem.php'; 
                     }
                 }
