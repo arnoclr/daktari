@@ -18,11 +18,16 @@ if (isset($_POST['nom'])) {
     $ins->execute([$nom, $taille_cm, $castre, $poids, $decede, $id, $user->id]);
 
     if ($ins->rowCount() > 0) {
-        header("Location: ?action=myAnimals");
+        header("Location: ?action=myAnimalInfo&id=$id");
         exit;
     }
 
     echo "<p>Erreur lors de la modification de l'animal</p>";
 }
+
+$get = $pdo->prepare("SELECT * FROM animaux WHERE id = ? AND id_proprietaire = ?");
+$get->execute([$id, $user->id]);
+
+$animal = $get->fetch();
 
 include "pages/animals/edit.php";

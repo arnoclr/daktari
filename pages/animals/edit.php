@@ -11,7 +11,7 @@
     <input type="checkbox" name="decede" id="decede" value="1" <?= $animal->decede ? "checked" : "" ?>>
 
     <div class="btn-group">
-        <button>Ajouter</button>
+        <button>Modifier</button>
         <button onclick="window.history.back();" class="back">Retour</button>
     </div>
 </form>
