@@ -28,4 +28,4 @@
         </li>
     <?php endforeach; ?>
 </ul>
-<a href="?action=addTraitement">Ajouter un traitement</a>
+<a class="button" href="?action=addTraitement&for=<?= $appointment->id ?>">Ajouter un traitement</a>

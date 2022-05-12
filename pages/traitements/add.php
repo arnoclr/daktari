@@ -13,12 +13,14 @@
     <input type="number" name="duree_jours" id="duree_jours" placeholder="Durée (jours)">
     <input type="number" name="dillution_pourcentage" id="dillution_pourcentage" placeholder="Dillution (%)">
 
-    <p>Concerne la consultation :</p>
-    <select name="consultation" id="consultation">
-        <?php foreach ($consultations as $consultation): ?>
-            <option value="<?= $consultation->id ?>"><?= $consultation->raison ?></option>
-        <?php endforeach; ?>
-    </select>
+    <?php if ($for == 0): ?>
+        <p>Concerne la consultation :</p>
+        <select name="consultation" id="consultation">
+            <?php foreach ($consultations as $consultation): ?>
+                <option value="<?= $consultation->id ?>"><?= $consultation->raison ?></option>
+            <?php endforeach; ?>
+        </select>
+    <?php endif; ?>
 
     <button>Ajouter à la consultation</button>
 </form>
