@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="src/styles/pages/home.css">
+<link rel="stylesheet" href="src/styles/pages/home.css?a=<?= md5_file("src/styles/pages/home.css") ?>">
 
 <header>
     <p>Bonjour <?= $user->nom ?>, voici vos prochains traitements.</p>
@@ -26,8 +26,6 @@
                     </div>
                 <?php endfor; ?>
             </div>
-            <div class="time-bar"></div>
-
         </div>
 
         <?php $day = 0; foreach($traitementsPerDays as $data): $day++ ?>
