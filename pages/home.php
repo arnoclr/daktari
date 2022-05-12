@@ -35,7 +35,8 @@
                 foreach($data as $item) {
                     for ($i = 0; $i < $item->traitement->frequence_journaliere; $i++) {
                         $card = $item;
-                        include 'includes/components/cardItem.php'; 
+                        if ($card->animal)
+                            include 'includes/components/cardItem.php'; 
                     }
                 }
                 ?>
