@@ -13,5 +13,9 @@
     <input type="number" name="poids" id="poids" placeholder="Poids (kg)" required>
     <input type="file" name="image" id="image" accept="image/*" required>
 
-    <button>Ajouter</button>
+    <div class="btn-group">
+        <button>Ajouter</button>
+        <button onclick="window.history.back();" class="back">Retour</button>
+    </div>
+
 </form>
