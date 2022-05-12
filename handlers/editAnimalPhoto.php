@@ -6,7 +6,7 @@ if ($id == 0) {
     die("Animal non trouvé");
 }
 
-if (isset($_FILES['image'])) {
+if (isset($_FILES['image']) && Token::verify()) {
     $image = uploadImageAndRetrieveUrl($_FILES["image"]);
 
     $ins = $pdo->query("UPDATE animaux SET image = '$image' WHERE id = $id AND WHERE id_proprietaire = $user->id");
