@@ -25,7 +25,7 @@
         </ul>
 
         <h4>Ses traitements récents</h4>
-        <p>Consultez le <a href="?action=viewCalender">calendrier</a> pour plus de détails</p>
+        <p>Consultez le <a href="?action=viewCalendar">calendrier</a> pour plus de détails</p>
         <div>
             <?php foreach($traitements as $traitement): ?>
                 <?php
