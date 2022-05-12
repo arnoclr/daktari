@@ -3,6 +3,8 @@
 <form method="post">
     <?= Token::set() ?>
     <input type="text" name="raison" id="raison" placeholder="Raison" value="<?= $appointment->raison ?>"><small>max 255 caractères</small>
+    <p>Concerne <a href="?myAnimalInfo&id=<?= $animal->id ?>"><?= $animal->nom ?></a></p>
+
     <p>Date définitive :</p>
     <input type="datetime-local" name="timestamp" id="timestamp" value="<?= str_replace(" ", "T", $appointment->date) ?>">
     <input type="number" name="duree" id="duree" placeholder="Durée en min." min="0" max="120" value="<?= $appointment->duree_minutes ?>">
@@ -26,4 +28,4 @@
         </li>
     <?php endforeach; ?>
 </ul>
-<a href="?action=addTraitement">Ajouter un traitement</a>
+<a class="button" href="?action=addTraitement&for=<?= $appointment->id ?>">Ajouter un traitement</a>

@@ -25,3 +25,64 @@
     margin: 0;
     width: 50%;
 }
+
+.card-wrap {
+    height: 200px;
+    background: white;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0 0 15px;
+
+    gap: 20px;
+}
+
+.product {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.mini-info {
+    font-size: 14px;
+    color: #808080;
+}
+.product-img {
+    padding: 8px;
+    display: grid;
+    place-items: center;
+}
+
+.product-img img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.dose-info, .animal-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dose-animal-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dose-animal-wrap img {
+    filter: invert(56%) sepia(9%) saturate(18%) hue-rotate(338deg) brightness(87%) contrast(92%);
+}

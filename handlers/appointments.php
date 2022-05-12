@@ -36,6 +36,8 @@ if (isset($_GET['edit'])) {
 
     $traitements = $pdo->query("SELECT * FROM traitements WHERE id_consultation = $appointment->id")->fetchAll();
 
+    $animal = $pdo->query("SELECT * FROM animaux WHERE id = $appointment->id_animal")->fetch();
+
     if (!$appointment) {
         die('Ce rendez-vous n\'existe pas !');
     }

@@ -40,6 +40,11 @@
             <?php endforeach; ?>
         </div>
 
+        <div>
+            <a href="?action=editAnimalInfo&id=<?= $animal->id ?>" class="button">Modifier les informations</a>
+            <a href="?action=editAnimalPhoto&id=<?= $animal->id ?>" class="button">Changer la photo</a>
+        </div>
+
     </section>
 
 </div>

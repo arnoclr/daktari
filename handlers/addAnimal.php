@@ -4,10 +4,10 @@ if (isset($_POST['nom'])) {
     $nom = htmlspecialchars($_POST['nom']);
     $espece = htmlspecialchars($_POST['espece']);
     $race = htmlspecialchars($_POST['race']);
-    $tailleCm = htmlspecialchars($_POST['taille_cm']);
+    $tailleCm = intval($_POST['taille_cm']);
     $genre = htmlspecialchars($_POST['genre']);
     $castre = $_POST['castre'] ?? 0;
-    $poids = htmlspecialchars($_POST['poids']);
+    $poids = intval($_POST['poids']);
     $image = uploadImageAndRetrieveUrl($_FILES["image"]);
 
     $ins = $pdo->prepare("INSERT INTO animaux (nom, espece, race, taille_cm, genre, castre, poids, image, id_proprietaire) VALUES (:nom, :espece, :race, :taille_cm, :genre, :castre, :poids, :image, :id_proprietaire)");

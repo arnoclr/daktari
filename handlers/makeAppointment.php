@@ -1,6 +1,6 @@
 <?php
 
-$req = $pdo->query('SELECT * FROM animaux WHERE id_proprietaire = ' . $user->id);
+$req = $pdo->query('SELECT * FROM animaux WHERE decede = FALSE AND id_proprietaire = ' . $user->id);
 $myAnimals = $req->fetchAll();
 
 if (isset($_POST['raison']) && isset($_POST['animal']) && isset($_POST['timestamp']) && Token::verify()) {
