@@ -7,6 +7,9 @@
     <input type="checkbox" name="castre" id="castre" value="1" <?= $animal->castre ? "checked" : "" ?>>
     <input type="number" name="poids" id="poids" placeholder="Poids (kg)" value="<?= $animal->poids ?>" required>
 
+    <p>Décédé ?</p>
+    <input type="checkbox" name="decede" id="decede" value="1" <?= $animal->decede ? "checked" : "" ?>>
+
     <div class="btn-group">
         <button>Ajouter</button>
         <button onclick="window.history.back();" class="back">Retour</button>

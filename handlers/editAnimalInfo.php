@@ -12,9 +12,10 @@ if (isset($_POST['nom'])) {
     $taille_cm = intval($_POST['taille_cm']);
     $castre = isset($_POST['castre']) ? 1 : 0;
     $poids = intval($_POST['poids']);
+    $decede = isset($_POST['decede']) ? 1 : 0;
 
-    $ins = $pdo->prepare("UPDATE animaux SET nom = ?, taille_cm = ?, castre = ?, poids = ? WHERE id = ? AND id_proprietaire = ?");
-    $ins->execute([$nom, $taille_cm, $castre, $poids, $id, $user->id]);
+    $ins = $pdo->prepare("UPDATE animaux SET nom = ?, taille_cm = ?, castre = ?, poids = ?, decede = ? WHERE id = ? AND id_proprietaire = ?");
+    $ins->execute([$nom, $taille_cm, $castre, $poids, $decede, $id, $user->id]);
 
     if ($ins->rowCount() > 0) {
         header("Location: ?action=myAnimals");
