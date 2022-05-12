@@ -6,12 +6,6 @@ body {
     padding: 0;
 }
 
-small {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .container {
     height: 100vh;
     display: flex;
