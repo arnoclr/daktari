@@ -10,6 +10,11 @@ button, .button {
     text-decoration: none;
 }
 
+.back {
+    background: #c6c6c6;
+    color: #000;
+}
+
 /* forms */
 input[type='color'],
 input[type='date'],
